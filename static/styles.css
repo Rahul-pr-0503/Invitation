@@ -93,28 +93,32 @@
       font-size:1.05rem;
     }
 
-    .open-btn{
-      position:fixed;
-      left:50%;
-      transform:translateX(-50%);
-      bottom:calc(18px + var(--safe-bottom));
-      background:var(--red);
-      color:white;
-      border:none;
-      padding:12px 20px;
-      border-radius:28px;
-      font-size:18px;
-      cursor:pointer;
-      box-shadow:0 12px 30px rgba(0,0,0,0.2);
-      opacity:0;
-      visibility:hidden;
-      transition:all .28s;
-      z-index:60;
-      min-height:48px; /* ensure adequate tap target */
-      line-height:1;
-    }
-    .open-btn.show{opacity:1;visibility:visible;transform:translateX(-50%) translateY(-6px)}
-
+   .open-btn{
+  position:fixed;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:28px;
+  background:var(--red);
+  color:white;
+  border:none;
+  padding:0 20px;
+  height:48px;
+  border-radius:28px;
+  font-size:18px;
+  cursor:pointer;
+  box-shadow:0 12px 30px rgba(0,0,0,0.2);
+  z-index:120;
+  display:none; /* JS will set display:block when showing */
+  opacity:0;
+  visibility:hidden;
+  transition:all .28s ease;
+}
+.open-btn.show{
+  display:block;
+  opacity:1;
+  visibility:visible;
+  transform:translateX(-50%) translateY(-6px);
+}
     .overlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.46);backdrop-filter:blur(3px);opacity:0;visibility:hidden;transition:all .24s;z-index:80}
     .overlay.show{opacity:1;visibility:visible}
 

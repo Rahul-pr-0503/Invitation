@@ -3,8 +3,12 @@
 
 <head>
     <meta charset="utf-8" />
+   
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="mobile-web-app-capable" content="yes">
     <title>ಕರ್ನಾಟಕ ರಾಜ್ಯೋತ್ಸವ — ಆಹ್ವಾನ</title>
+
+    <!-- make sure this filename matches the file you saved below -->
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='flag.png') }}">
 </head>
@@ -12,10 +16,7 @@
 <body>
     <header class="hero">
         <div class="flag-area">
-            <!-- Canvas for realistic waving flag -->
             <canvas id="flag-canvas" aria-hidden="true"></canvas>
-
-            <!-- flagpole to left -->
             <div class="flag-pole" aria-hidden="true"></div>
         </div>
 
@@ -28,9 +29,10 @@
     <main class="content">
         <section class="info">
             <p>ದಿನಾಂಕ: ಮಂಗಳವಾರ, 11 ನವೆಂಬರ್ 2025 (11/11/2025)</p>
-            <p>ಸ್ಕ್ರೋಲ್ ಮಾಡಿ ಮತ್ತು ಆಹ್ವಾನದ ಬಟನ್ ಕಾಣಿಸಿ!</p>
+            <p>ಈ ಪುಟದಲ್ಲಿ ಆಹ್ವಾನದ ಬಟನ್ ಕೊನೆಯಲ್ಲಿ ಕಾಣಿಸುತ್ತದೆ.</p>
         </section>
 
+        <!-- BUTTON: should appear when FORCE_SHOW=true or when date reached -->
         <button id="open-btn" class="open-btn" aria-haspopup="dialog">ಆಹ್ವಾನ ತೆರೆಯಿರಿ</button>
 
         <div id="overlay" class="overlay" aria-hidden="true" role="dialog" aria-labelledby="invite-title">
@@ -40,13 +42,12 @@
                 <button id="close-invite" class="close" aria-label="Close invitation">✕</button>
                 <h2 id="invite-title">ಆಹ್ವಾನ</h2>
                 <p>ನಮ್ಮ AIML ವಿಭಾಗದ 5ನೇ ಮತ್ತು 3ನೇ ಸೆಮಿಸ್ಟರ್ ವಿದ್ಯಾರ್ಥಿಗಳು ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವವನ್ನು ಸಂಭ್ರಮಿಸುತ್ತಿದ್ದಾರೆ.
-                    ದಯವಿಟ್ಟು ಬಂದಿರಲಿ.</p>
+                    ದಯವಿಟ್ಟು ಬನ್ನಿ.</p>
                 <ul>
                     <li>📅 11/11/2025 (ಮಂಗಳವಾರ)</li>
                     <li>📍 AIML ವಿಭಾಗ ಕಾನ್ಫರೆನ್ಸ್ ಹಾಲ್</li>
-                    <li>⏰ ಮಧ್ಯಾಹ್ನ 1:30 ರಿಂದ </li>
+                    <li>⏰ 1:30 PM</li>
                 </ul>
-                <p>ಜೈ ಕರ್ನಾಟಕ!</p>
             </div>
         </div>
     </main>
@@ -55,6 +56,7 @@
 
     <audio id="jai-audio" src="{{ url_for('static', filename='jai_karnataka.mp3') }}" preload="auto"></audio>
 
+    <!-- script at end so DOM elements exist -->
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 
