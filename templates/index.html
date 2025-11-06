@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="kn">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>ಕರ್ನಾಟಕ ರಾಜ್ಯೋತ್ಸವ — ಆಹ್ವಾನ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='flag.png') }}">
+</head>
+
+<body>
+    <header class="hero">
+        <div class="flag-area">
+            <!-- Canvas for realistic waving flag -->
+            <canvas id="flag-canvas" aria-hidden="true"></canvas>
+
+            <!-- flagpole to left -->
+            <div class="flag-pole" aria-hidden="true"></div>
+        </div>
+
+        <div id="jktxt" class="jai-karnataka" aria-hidden="true">ಜೈ ಕರ್ನಾಟಕ!</div>
+
+        <h1 class="title">ಕರ್ನಾಟಕ ರಾಜ್ಯೋತ್ಸವ — AIML</h1>
+        <p class="subtitle">5ನೇ ಮತ್ತು 3ನೇ ಸೆಮಿಸ್ಟರ್ ವಿದ್ಯಾರ್ಥಿಗಳು</p>
+    </header>
+
+    <main class="content">
+        <section class="info">
+            <p>ದಿನಾಂಕ: ಮಂಗಳವಾರ, 11 ನವೆಂಬರ್ 2025 (11/11/2025)</p>
+            <p>ಸ್ಕ್ರೋಲ್ ಮಾಡಿ ಮತ್ತು ಆಹ್ವಾನದ ಬಟನ್ ಕಾಣಿಸಿ!</p>
+        </section>
+
+        <button id="open-btn" class="open-btn" aria-haspopup="dialog">ಆಹ್ವಾನ ತೆರೆಯಿರಿ</button>
+
+        <div id="overlay" class="overlay" aria-hidden="true" role="dialog" aria-labelledby="invite-title">
+            <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+            <div class="invite-card">
+                <button id="close-invite" class="close" aria-label="Close invitation">✕</button>
+                <h2 id="invite-title">ಆಹ್ವಾನ</h2>
+                <p>ನಮ್ಮ AIML ವಿಭಾಗದ 5ನೇ ಮತ್ತು 3ನೇ ಸೆಮಿಸ್ಟರ್ ವಿದ್ಯಾರ್ಥಿಗಳು ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವವನ್ನು ಸಂಭ್ರಮಿಸುತ್ತಿದ್ದಾರೆ.
+                    ದಯವಿಟ್ಟು ಬಂದಿರಲಿ.</p>
+                <ul>
+                    <li>📅 11/11/2025 (ಮಂಗಳವಾರ)</li>
+                    <li>📍 AIML ವಿಭಾಗ ಕಾನ್ಫರೆನ್ಸ್ ಹಾಲ್</li>
+                    <li>⏰ 4:30 PM</li>
+                </ul>
+                <p>ಜೈ ಕರ್ನಾಟಕ!</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">AIML Branch — 5th & 3rd Sem Students</footer>
+
+    <audio id="jai-audio" src="{{ url_for('static', filename='jai_karnataka.mp3') }}" preload="auto"></audio>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
